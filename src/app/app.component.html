@@ -1,0 +1,22 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<form>
+  <label>name</label><br>
+  <input type="text" [(ngModel)]="employee.name" [ngModelOptions]="{standalone: true}"><br>
+   <label>id</label><br>
+  <input type="text" [(ngModel)]="employee.id" [ngModelOptions]="{standalone: true}"><br>
+  <div *ngFor="let obj of addressArray ; let i = index">
+  <div class="row">
+    <div class="col-4">
+      <label>state</label>
+      <input type="text" [(ngModel)]="obj.state" name="state{{i}}">
+      <label>pin</label>
+      <input type="text" [(ngModel)]="obj.pin" name="pin{{i}}">
+  </div>
+  </div>
+  </div>
+      <button (click)="add()"> add</button>
+      <button (click)="submit()">Submit</button>
+</form>
